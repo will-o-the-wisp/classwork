@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class makeAllWords{
   public static void main(String[] args){
-    System.out.println(arytoString(makeAllWords(3,3)));
+    System.out.println(arytoString(makeAllWords(5,2)));
   }
   public static String arytoString(List<String> l){
     String ans="[";
@@ -20,9 +20,11 @@ public class makeAllWords{
     if(k==0){
       data.add(word);
     }
-    for(int i=0;i<maxLetter;i++){
-      word+=(char)('a'+i);
-      helper(k-1,word,maxLetter,data);
+    else{
+      for(int i=0;i<maxLetter;i++){
+        String n = word+(char)('a'+i);
+        helper(k-1,n,maxLetter,data);
+      }
     }
   }
   public static List<String> makeAllWords(int k, int maxLetter){
